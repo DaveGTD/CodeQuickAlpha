@@ -1,0 +1,25 @@
+{
+  "name": "code-quick",
+  "version": "1.0.0",
+  "description": "User portal for Code Quick",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canvascs/codequick-front.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/canvascs/codequick-front/issues"
+  },
+  "homepage": "https://github.com/canvascs/codequick-front#readme",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-sass": "latest",
+    "node-bourbon": "latest",
+    "node-neat": "latest"
+  }
+}

@@ -1,0 +1,151 @@
+//easy-autocomplete
+//jQuery plugin for autocompletion
+//@author Łukasz Pawełczak (http://github.com/pawelczak)
+//@version 1.3.5
+
+.easy-autocomplete
+  position: relative
+  a
+    display: block
+  &.eac-blue-light
+    ul
+      li.selected, .eac-category.selected
+        background-color: #ecf5fc
+  &.eac-green-light
+    ul
+      li.selected, .eac-category.selected
+        background-color: #9eff75
+  &.eac-red-light
+    ul
+      li.selected, .eac-category.selected
+        background-color: #ff8e8e
+  &.eac-yellow-light
+    ul
+      li.selected, .eac-category.selected
+        background-color: #ffe233
+  &.eac-dark-light
+    ul
+      li.selected, .eac-category.selected
+        background-color: #4d4d4d
+        color: #fff
+  &.eac-dark
+    color: #fff
+    input
+      background-color: #404040
+      border-radius: 4px
+      color: #f6f6f6
+    ul
+      li, .eac-category
+        background-color: #404040
+      li.selected, .eac-category.selected
+        background-color: #737373
+        color: #f6f6f6
+  &.eac-dark-glass
+    color: #fff
+    input
+      background-color: rgba(0, 0, 0, 0.8)
+      border-radius: 4px
+      color: #f6f6f6
+    ul
+      li.selected, .eac-category.selected
+        background-color: rgba(64, 64, 64, 0.8)
+        color: #f6f6f6
+      li:last-child, .eac-category:last-child
+        border-radius: 0 0 4px 4px
+  &.eac-blue
+    color: #fff
+    input
+      background-color: #6d9ed1
+      color: #f6f6f6
+      &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
+        color: #f6f6f6
+    ul
+      li, .eac-category
+        background-color: #6d9ed1
+      li.selected, .eac-category.selected
+        background-color: #94b8dd
+        color: #f6f6f6
+  &.eac-yellow
+    color: #333
+    input
+      background-color: #ffdb7e
+      border-radius: 4px
+      color: #333
+    ul
+      li, .eac-category
+        background-color: #ffdb7e
+      li.selected, .eac-category.selected
+        background-color: #ffe9b1
+        color: #333
+  &.eac-purple
+    color: #333
+    input
+      background-color: #d6d1e7
+      color: #333
+    ul
+      li, .eac-category
+        background-color: #d6d1e7
+      li.selected, .eac-category.selected
+        background-color: #ebe8f3
+        color: #333
+  &.eac-bootstrap input
+    border-radius: 4px
+    color: #555
+    padding: 6px 12px
+
+.easy-autocomplete-container
+  top: 100%
+  left: 38px
+  position: absolute
+  width: auto
+  min-width: 360px
+  z-index: 2
+  margin-top: 1em
+  color: $dk-grey
+  ul
+    background: none repeat scroll 0 0 $grey-lite
+    box-shadow: 4px 9px 6px 0 $shadow-lite
+    display: none
+    margin-top: 0
+    padding-bottom: 0
+    padding-left: 0
+    position: relative
+    li, .eac-category
+      display: block
+      font-weight: normal
+    li
+      &:last-child
+        border-radius: 0 0 2px 2px
+      &.selected
+        background: none repeat scroll 0 0 #ebebeb
+        cursor: pointer
+        div
+          font-weight: normal
+      div
+        display: block
+        font-weight: normal
+        word-break: break-all
+        padding: 1em
+      b
+        font-weight: bold
+    .eac-category
+      font-style: italic
+
+.eac-description .eac-item span
+  font-style: italic
+  font-size: 0.9em
+
+.eac-icon-left .eac-item img
+  margin-right: 4px
+  max-height: 30px
+
+.eac-icon-right .eac-item
+  margin-top: 8px
+  min-height: 24px
+  position: relative
+  img
+    margin-left: 4px
+    max-height: 30px
+    position: absolute
+    right: -4px
+    top: -8px

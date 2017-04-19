@@ -1,0 +1,112 @@
+// type
+$font: 'Open Sans', sans-serif
+
+h1
+  font-size: 1.4em
+  font-weight: 700
+  letter-spacing: 0.08em
+  padding: 1rem 0
+
+h2
+  font-size: 1.2em
+  font-weight: 700
+  margin-bottom: 1em
+
+p
+  line-height: 150%
+
+a
+  color: $blue
+
+strong
+  font-weight: 700
+
+.a-left
+  text-align: left
+.a-center
+  text-align: center
+.a-right
+  text-align: right
+.f-left
+  float: left
+.f-right
+  float: right
+.v-align-mid
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100%
+
+.red-t
+  color: $red
+.ltBlue-t
+  color: $blue-mute
+.blue-t
+  color: $blue
+
+.text-link
+  color: $blue-lite
+  padding: 1em
+  border-radius: 4px
+  transition: all 0.5s ease
+  &:hover
+    background: $green-hi
+
+.link
+  text-decoration: underline
+
+.small-text
+  font-size: 0.88em
+  a
+    text-decoration: underline
+
+.drop-target
+  position: relative
+  cursor: pointer
+  a
+    display: block
+    position: relative
+    padding-right: 20px
+    .arrow-down
+      position: absolute
+      top: 50%
+      right: 0
+      margin-top: -2px
+  .dropdown
+    display: none
+    position: absolute
+    top: 100%
+    right: -16px
+    min-width: 215px
+    border-radius: 3px
+    width: auto
+    margin-top: -10px
+    box-shadow: 2px 4px 9px 0 $shadow-lite
+    padding: 1em 0
+    background: $grey-lite
+    a
+      font-size: 0.88em
+      display: block
+      color: $dk-grey
+      line-height: 130%
+      padding: 0.55em 2.2em
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      bottom: 100%
+      right: 8px
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 10px 10px 10px
+      border-color: $trans $trans $grey-lite $trans
+
+.noti-num
+  font-size: 0.8em
+  line-height: 0.9em
+  padding: 0.4em 0.564em
+  border-radius: 100%
+  background: $green
+  color: $white
+  box-shadow: 1px 1px 4px 0 $shadow

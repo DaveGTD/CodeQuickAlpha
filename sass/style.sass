@@ -1,0 +1,375 @@
+@import bourbon
+@import neat
+@import reset
+@import var
+@import dropzone
+@import magnific
+@import autocomplete
+@import tooltip
+@import grid
+@import text
+@import forms
+
+// content
+html
+  height: 100%
+
+body
+  min-height: 100%
+  display: flex
+  flex-direction: column
+  min-width: 480px
+  font-family: $font
+  font-size: $base
+  background: $bg
+  color: $blue
+  +respond-to($tab-port)
+    font-size: 14px
+
+@import header
+
+#content
+  position: relative
+  z-index: 1
+  flex: 1
+  padding: 3em 0
+
+.load-content
+  opacity: 0
+
+#footer
+  position: relative
+  z-index: 2
+  background: $green
+  color: $white
+  padding: 1em 0
+  .copyright
+    font-size: 0.9em
+    text-align: right
+
+.hide
+  display: none
+.hide-tab
+  +respond-to($tab-port)
+    display: none
+.show-tab
+  display: none
+  +respond-to($tab-port)
+    display: block
+
+// icons
+.arrow-down
+  width: 0
+  height: 0
+  border-left: $nav-pad solid $trans
+  border-right: $nav-pad solid $trans
+  border-top: $nav-pad solid $blue
+
+.ico-complete, .ico-progress, .ico-wait
+  display: inline-block
+  width: 27px
+  height: 27px
+.ico-upload
+  width: 52px
+  height: auto
+.ico-complete, .ico-upload
+  fill: $green
+.ico-progress
+  fill: $yellow
+.ico-wait
+  fill: $grey
+
+// tables
+.table-contain
+  overflow: auto
+.flex-table
+  display: block
+  width: 100%
+  margin-bottom: 3em
+  overflow: auto
+  +respond-to($tab-port)
+    display: table
+  .t-row
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    align-items: center
+    width: 100%
+    +respond-to($tab-port)
+      display: table-row
+    .t-cell
+      text-align: center
+      order: 0
+      flex: 1 1 11%
+      padding: 1.1em 10px
+      +respond-to($tab-port)
+        display: table-cell
+      &.t-large
+        flex: 1 1 20%
+        text-align: left
+      &.t-btn
+        text-align: center
+        .btn
+          display: block
+          margin: 0 1.7em
+          +respond-to($base)
+            display: inline-block
+            margin: 0
+    &.t-heading
+      .t-cell
+        font-size: 0.88em
+        padding-bottom: 2em
+        +respond-to($tab-port)
+          padding-bottom: 1em
+    &.t-card
+      background: $white
+      margin-bottom: 1em
+      border-radius: 4px
+
+.table
+  display: table
+  width: 100%
+  .t-row
+    display: table-row
+    > div
+      position: relative
+      display: table-cell
+      padding: 1.5em
+      font-weight: 700
+      text-align: center
+      border-bottom: 1px solid $blue
+      +respond-to($base)
+        padding: 1.5em 0.5em
+      &:first-child
+        text-align: left
+    &.t-heading > div
+      text-transform: uppercase
+      font-size: 0.88em
+      font-weight: 400
+      padding: 0 1.5em 0.7em 1.5em
+      border-bottom: 0
+  .td-slider
+    overflow: hidden
+
+.specialties-list
+  max-width: 600px
+  margin: 0 auto 3.5em auto
+  &#pricingApproval
+    margin: 0 auto
+    padding: 2em 0 1em 0
+
+.custom-info
+  max-width: 600px
+  padding: 0.5em 1.5em 0 1.5em
+  margin: 0 auto
+  strong
+    padding-right: 2em
+
+// components
+.alert
+  position: relative
+  width: 100%
+  font-size: 0.88em
+  padding: 0.88em
+  text-align: center
+  background: $blue
+  color: $white
+  letter-spacing: 0.05em
+  overflow: hidden
+  a
+    color: $white
+    text-decoration: underline
+  .alert-close
+    position: absolute
+    top: 50%
+    right: 1em
+    width: 18px
+    height: 18px
+    margin-top: -9px
+    svg
+      fill: $white
+
+.card
+  background: $white
+  border-radius: 4px
+  box-shadow: 4px 9px 6px 0 $shadow3
+  padding: 2.2em 1em
+  margin: 1.5em 0 0 0
+  +respond-to($tab-port)
+    padding: 2.2em 0
+
+// drag drop upload
+.dz-message
+  border: 3px dashed $green
+  height: 275px
+  text-align: center
+  background: $white-trans
+  color: $green
+  margin: 1.5em 0
+  > span
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100%
+    .text-label
+      font-size: 1.4em
+      +respond-to($tab-port)
+        font-size: 1em
+    svg
+      margin-right: 2em
+      +respond-to($tab-port)
+        margin-right: 1em
+    a
+      margin-left: 1.5em
+      +respond-to($tab-port)
+        margin-left: 0.5em
+
+.dropzone-previews
+  +clearfix
+  margin-bottom: 2em
+  li
+    position: relative
+    text-align: center
+    .dz-details
+      position: relative
+      padding: 1em
+      font-size: 0.8em
+      text-align: center
+      img
+        width: 100%
+        padding: 1em
+      .dz-extension
+        position: absolute
+        top: 45%
+        left: 0
+        width: 100%
+        text-transform: uppercase
+        font-weight: 700
+        font-size: 1.8em
+      .dz-filename
+        word-wrap: break-word
+        line-height: 120%
+        height: 2.6em
+        overflow: hidden
+        padding-bottom: 1em
+    .remove-btn
+      position: absolute
+      top: 1em
+      right: 1em
+      display: block
+      width: 22px
+      height: 22px
+      cursor: pointer
+      display: none
+      svg
+        display: block
+        width: 100%
+        height: auto
+        fill: $red
+    &:hover
+      .remove-btn
+        display: block
+
+#chartUploadInner
+  display: none
+
+#submitBtn
+  display: none
+
+#submit-success
+  display: none
+
+// popup
+.mfp-bg
+  background: $black-trans
+
+.white-popup
+  position: relative
+  width: auto
+  max-width: $med
+  min-width: 448px
+  margin: 2em auto
+  overflow: hidden
+  .row
+    .card
+      margin: 0
+      padding: 2.2em 0 0 0
+      color: $dk-grey
+      box-shadow: 4px 9px 6px 0 $shadow-lite
+      .limit-height
+        max-height: 500px
+        overflow: auto
+      p
+        margin-bottom: 1.5em
+  .popup-footer
+    text-align: right
+    padding: 1em 0.5em 1em 0
+    &.scrollable
+      border-top: 1px solid $shadow-lite
+    a
+      display: inline-block
+      width: auto
+      height: auto
+      line-height: 100%
+      position: relative
+      top: auto
+      right: auto
+      color: $blue
+      font-weight: 700
+      font-size: 1.2em
+      font-family: $font
+      padding: 0.5em 1em
+      opacity: 1
+      &.red-t
+        color: $black-lite
+  &.dialog
+    max-width: 480px
+  &.small
+    max-width: 700px
+
+#showList
+  overflow: hidden
+#showLoader
+  display: none
+  .loading-ani
+    position: absolute
+    top: 50%
+    left: 0
+    width: 100%
+    margin-top: -102px
+    svg
+      display: block
+      margin: 4em auto 0 auto
+      width: 140px
+      .loader-circle
+        fill: $green
+      .progress-guide
+        fill: $trans
+      .progress-stroke
+        fill: $white
+      .progress-fill
+        fill: $blue
+#showPricing
+  display: none
+
+
+/* overlay at start */
+.mfp-fade.mfp-bg
+  opacity: 0
+  transition: all 0.15s ease-out
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready
+  opacity: 0.8
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing
+  opacity: 0
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content
+  opacity: 0
+  transition: all 0.15s ease-out
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content
+  opacity: 1
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+  opacity: 0

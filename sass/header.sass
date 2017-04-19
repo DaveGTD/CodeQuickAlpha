@@ -1,0 +1,65 @@
+// header
+#header
+  background: $white
+  position: relative
+  z-index: 2
+  width: 100%
+  height: $nav-h
+
+#logo
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: $logo-w
+  background: $green
+  +respond-to($big-phone)
+    width: 80px
+  svg
+    display: block
+    fill: $white
+    width: 30px
+    height: auto
+    margin: 0 auto
+    padding-top: 22px
+
+#nav
+  position: absolute
+  top: 0
+  left: $logo-w
+  height: 100%
+  +respond-to($big-phone)
+    left: 80px
+  li
+    float: left
+    display: block
+    text-align: center
+    a
+      position: relative
+      display: block
+      line-height: $nav-h - ($nav-pad*2)
+      padding: $nav-pad 2.1em
+      +respond-to($big-phone)
+        padding: $nav-pad 1em
+      &:hover, &.active
+        background: $green-hi-lite
+      &.active
+        background: $green-hi
+        border-bottom: $nav-pad solid $green
+        padding: $nav-pad 2.1em 0 2.1em
+        +respond-to($big-phone)
+          padding: $nav-pad 1em 0 1em
+      .noti-num
+        position: absolute
+        top: 8px
+        right: 5px
+
+#nav-right
+  position: absolute
+  top: 0
+  right: 0
+  height: 100%
+  a
+    line-height: $nav-h
+  .dropdown a
+    line-height: 130%

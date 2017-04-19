@@ -1,0 +1,160 @@
+.field
+  position: relative
+  margin-bottom: 2.1em
+
+label
+  display: block
+  margin-bottom: 0.5em
+  padding-left: 0.5em
+  border-left: 2px solid $trans
+  +respond-to($desktop)
+    padding-left: 0
+
+.field-input, .field-input-other, input[type=text], textarea, select
+  display: block
+  padding: 0.4em 40px 0.5em 0.5em
+  width: 100%
+  font-family: $font
+  font-size: 1.2em
+  line-height: 130%
+  font-weight: 700
+  color: $blue
+  border: 1px solid $trans
+  border-radius: 3px
+
+input[type=text], textarea
+  border: 1px solid $blue
+  &.text-inline
+    height: 30px
+    border-radius: 0
+    padding: 0
+    font-weight: 400
+    font-size: 1em
+    width: auto
+    display: inline-block
+    margin-left: 0.5em
+    border: 0
+    border-bottom: 1px solid $blue
+
+textarea
+  overflow: hidden
+  resize: none
+
+select
+  display: inline-block
+  width: 100px
+  padding: 0.4em 0 0.3em 0.5em
+  border: 1px solid $blue
+
+.field-edit, .field-save
+  position: absolute
+  z-index: 2
+  top: 0
+  right: 0
+  display: flex
+  align-items: center
+  justify-content: space-between
+  height: 100%
+  padding: 1em 0
+  width: 40px
+  color: $green
+  font-size: 0.8em
+  font-weight: 700
+
+.field-save
+  color: $red
+
+.btn
+  display: inline-block
+  background: $green
+  color: $white
+  padding: 0.5em 1.5em 0.6em 1.5em
+  border-radius: 999em
+  cursor: pointer
+  border: 0
+  box-shadow: none
+  -webkit-appearance: none
+  font-size: 1em
+  &.btn-red
+    background: $red
+  &.btn-blue
+    background: $blue
+  &.btn-large
+    font-size: 1.1em
+
+input.field-hide, textarea.field-hide, .field-save
+  display: none
+
+.add-auto
+  position: relative
+  display: block
+  margin-bottom: 3.5em
+  border-bottom: 1px solid $blue
+  color: $blue-mute
+  input
+    padding: 1em 0 1em 52px
+    font-weight: 700
+    border: 0
+    border-radius: 0
+    font-size: 1em
+    width: 100%
+    line-height: 150%
+  .add-auto-btn
+    position: absolute
+    top: 50%
+    left: 0
+    width: 48px
+    margin-top: -11px
+    svg
+      display: block
+      width: 22px
+      height: auto
+      fill: $green
+
+.checklist
+  +clearfix
+  padding: 0 0 1em 0
+  li
+    padding: 0.75em 0
+    position: relative
+  .check-control
+    position: absolute
+    top: 0
+    left: 0
+    width: 30px
+    height: 30px
+    transition: transform 0.1s ease
+    svg
+      display: block
+      width: 100%
+      height: auto
+      fill: $blue
+      .circle-over
+        fill: $white !important
+        transform-origin: 50% 50%
+        transition: transform 0.1s ease
+  input[type="checkbox"]:not(:checked), input[type="checkbox"]:checked
+    position: absolute
+    top: -9999px
+    left: -9999px
+  input[type="checkbox"] + label
+    position: relative
+    padding-left: 50px
+    cursor: pointer
+    line-height: 30px
+    margin-bottom: 0
+    height: 30px
+  input[type="checkbox"]:checked + label .check-control svg
+    fill: $green
+  input[type="checkbox"]:checked + label .check-control .circle-over
+    transform: scale(0)
+  input[type="checkbox"]:checked + label
+    font-weight: 700
+  input[type="checkbox"] + label:hover .check-control
+    transform: scale(1.2)
+
+#example-form
+  label
+    padding-left: 0
+  input
+    margin-bottom: 2em

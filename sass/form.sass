@@ -1,0 +1,424 @@
+@import bourbon
+@import neat
+@import reset
+@import var
+@import magnific
+@import tooltip
+@import grid
+@import text
+
+// content
+html
+  height: 100%
+
+body
+  min-height: 100%
+  min-width: 480px
+  font-family: $font
+  font-size: $base
+  background: $green
+  color: $white
+  +respond-to($base)
+    font-size: 14px
+
+#header
+  position: relative
+  z-index: 1
+  width: 100%
+  height: $nav-h
+
+#logo
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: $logo-w
+  background: $green
+  +respond-to($big-phone)
+    width: 80px
+  svg
+    display: block
+    fill: $white
+    width: 30px
+    height: auto
+    margin: 0 auto
+    padding-top: 22px
+
+.hide
+  display: none
+
+//text
+p
+  margin-bottom: 1.5em
+
+h2
+  text-align: center
+  font-weight: 400
+  line-height: 140%
+
+.title
+  position: absolute
+  bottom: 100%
+  left: 0
+  width: 100%
+  margin-bottom: 1em
+  h1
+    text-transform: uppercase
+    text-align: center
+    font-weight: 300
+    font-size: 3em
+    letter-spacing: 0.2em
+    margin-bottom: 0
+  p
+    font-size: 1.1em
+    text-align: center
+    font-weight: 300
+
+.green-t
+  color: $green
+
+.a-center
+  text-align: center
+
+//forms
+input
+  display: inline-block
+  background: $trans
+  color: $green
+  padding: 1px 0
+  margin: 0 0.3em
+  border-bottom: 2px solid $blue
+
+.btn
+  display: inline-block
+  background: $blue
+  color: $white
+  padding: 0.5em 2.5em 0.6em 2.5em
+  border-radius: 999em
+  cursor: pointer
+  border: 0
+  box-shadow: none
+  -webkit-appearance: none
+  font-size: 1em
+  &.btn-green
+    background: $green
+
+.checklist
+  +clearfix
+  padding: 0 0 1em 0
+  li
+    padding: 0.75em 0
+    position: relative
+  .check-control
+    position: absolute
+    top: 0
+    left: 0
+    width: 30px
+    height: 30px
+    transition: transform 0.1s ease
+    +respond-to($base)
+      width: 20px
+      height: 20px
+    svg
+      display: block
+      width: 100%
+      height: auto
+      fill: $blue
+      .circle-over
+        fill: $white !important
+        transform-origin: 50% 50%
+        transition: transform 0.1s ease
+  input[type="checkbox"]:not(:checked), input[type="checkbox"]:checked
+    position: absolute
+    top: -9999px
+    left: -9999px
+  input[type="checkbox"] + label
+    position: relative
+    padding-left: 50px
+    cursor: pointer
+    line-height: 30px
+    margin-bottom: 0
+    height: 30px
+  input[type="checkbox"]:checked + label .check-control svg
+    fill: $green
+  input[type="checkbox"]:checked + label .check-control .circle-over
+    transform: scale(0)
+  input[type="checkbox"]:checked + label
+    font-weight: 700
+  input[type="checkbox"] + label:hover .check-control
+    transform: scale(1.2)
+
+#userPatients
+  width: 100px
+
+.acct-form
+  max-width: 50%
+  margin: 0 auto
+  label
+    text-align: left
+    white-space: nowrap
+    flex: 0 1 100px
+    +respond-to($base)
+      text-align: center
+
+//components
+#contain
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 2
+  overflow: hidden
+  &.mobile
+    position: relative
+    top: auto
+    left: auto
+    height: auto
+
+#slider
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  max-width: 1024px
+  +respond-to($base)
+    max-width: 90%
+  .slider-top
+    position: absolute
+    bottom: 100%
+    left: 0
+    width: 100%
+    z-index: 2
+  .slider-bottom
+    position: absolute
+    top: 100%
+    margin-top: 12px
+    left: 0
+    width: 100%
+    z-index: 1
+    &.active
+      z-index: 3
+
+.mobile #slider
+  position: relative
+  top: auto
+  left: auto
+  margin: 1em auto
+
+.card-wrap
+  position: relative
+  opacity: 0
+  &.active
+    z-index: 2
+  &.show
+    opacity: 1
+  &.clickable
+    cursor: pointer
+  .card
+    position: relative
+    color: $blue
+    font-size: 1.2em
+    width: 100%
+    z-index: 1
+    margin-bottom: 12px
+    min-height: 56px
+    .card-bg
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: $white-trans2
+      border-radius: 4px
+      box-shadow: 4px 9px 6px 0 $shadow3
+      z-index: 1
+    .card-no, .card-title
+      position: absolute
+      top: 17px
+      left: 0
+      z-index: 2
+      font-size: 17px
+      line-height: 20px
+      font-weight: 700
+      color: $green
+    .card-no
+      left: 26px
+    .card-title
+      width: 100%
+      text-align: center
+      color: $white
+      font-weight: 400
+    .btn
+      float: right
+
+
+.inner-card
+  position: relative
+  z-index: 2
+  padding: 4em 3em 2.5em 3em
+  overflow: hidden
+  p
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    width: 100%
+    text-align: center
+    span
+      white-space: nowrap
+      flex: 0 1 auto
+    input
+      flex: 2 1 25%
+      margin-bottom: 0.75em
+      +respond-to($base)
+        flex: 2 1 90%
+
+.table
+  display: table
+  width: 100%
+  .t-row
+    display: table-row
+    > div
+      position: relative
+      display: table-cell
+      padding: 1em
+      font-weight: 700
+      text-align: center
+      +respond-to($base)
+        padding: 0.5em
+      &:first-child
+        text-align: left
+    &.t-heading > div
+      text-transform: uppercase
+      font-size: 0.88em
+      font-weight: 400
+      padding: 0 1.5em 0.7em 1.5em
+      border-bottom: 0
+  .td-slider
+    overflow: hidden
+
+.specialties-list
+  max-width: 600px
+  margin: 0 auto 1em auto
+  &#pricingApproval
+    margin: 0 auto
+    padding: 2em 0 1em 0
+
+.specialties-edit
+  max-width: 600px
+  margin: 0 auto 1em auto
+  color: $dk-grey
+  p
+    display: block
+    text-align: left
+    margin-bottom: 0.5em
+
+.custom-info
+  max-width: 600px
+  padding: 0.5em 1.5em 0 1.5em
+  margin: 0 auto
+  strong
+    padding-right: 2em
+
+// popup
+.mfp-bg
+  background: $black-trans
+
+.white-popup
+  position: relative
+  width: auto
+  max-width: $med
+  min-width: 448px
+  margin: 2em auto
+  overflow: hidden
+  .row
+    .card
+      background: $white
+      border-radius: 4px
+      margin: 0
+      padding: 2.2em 0 0 0
+      color: $dk-grey
+      box-shadow: 4px 9px 6px 0 $shadow-lite
+      +respond-to($tab-port)
+        padding: 2.2em 0
+      .limit-height
+        max-height: 500px
+        overflow: auto
+      h2
+        text-align: left
+        font-weight: 700
+        &.a-center
+          text-align: center
+      p
+        margin-bottom: 1.5em
+  .popup-footer
+    text-align: right
+    padding: 1em 0.5em 1em 0
+    &.scrollable
+      border-top: 1px solid $shadow-lite
+    a
+      display: inline-block
+      width: auto
+      height: auto
+      line-height: 100%
+      position: relative
+      top: auto
+      right: auto
+      color: $blue
+      font-weight: 700
+      font-size: 1.2em
+      font-family: $font
+      padding: 0.5em 1em
+      opacity: 1
+      &.red-t
+        color: $black-lite
+  &.dialog
+    max-width: 480px
+  &.small
+    max-width: 700px
+
+#showList
+  overflow: hidden
+#showLoader
+  display: none
+  .loading-ani
+    position: absolute
+    top: 50%
+    left: 0
+    width: 100%
+    margin-top: -102px
+    svg
+      display: block
+      margin: 2em auto 0 auto
+      width: 140px
+      .loader-circle
+        fill: $green
+      .progress-guide
+        fill: $trans
+      .progress-stroke
+        fill: $white
+      .progress-fill
+        fill: $blue
+
+//magnific popup fade
+.mfp-fade
+  &.mfp-bg
+    opacity: 0
+    transition: all 0.15s ease-out
+    &.mfp-ready
+      opacity: 0.8
+    &.mfp-removing
+      opacity: 0
+  &.mfp-wrap .mfp-content
+    opacity: 0
+    transition: all 0.15s ease-out
+  &.mfp-ready .mfp-content
+    opacity: 1
+  &.mfp-removing .mfp-content
+    opacity: 0
+
+.dark-tooltip.red
+  background: $red
+  &.north .tip
+    border-color: $trans $trans $red $trans

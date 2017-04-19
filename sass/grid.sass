@@ -1,0 +1,64 @@
+// sizes
+$base: 16px
+$med: 1056px
+
+$neat-grid: (columns: 12, gutter: 1em, media: $med)
+
+$phone: '(max-width: 480px)'
+$big-phone: '(max-width: 640px)'
+$tab-port: '(max-width: 767px)'
+$tab-land: '(min-width: 768px) and (max-width: 979px)'
+$base: '(max-width: 1056px)'
+$desktop: '(max-width: 1200px)'
+$non-retina: 'screen and (-webkit-max-device-pixel-ratio: 1)'
+$retina: '(min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx)'
+
+@mixin respond-to($media)
+  @media only screen and #{$media}
+    @content
+
+// structure
+.wrap
+  padding: 0 3em
+  +clearfix
+
+.row
+  position: relative
+  max-width: $med
+  margin: 0 auto
+  +grid-container
+  +respond-to($desktop)
+    max-width: none
+    margin: 0 1em
+
+@for $i from 1 through 12
+  .col#{$i}
+    +grid-column($i)
+    +respond-to($tab-port)
+      +grid-column(12)
+
+@for $i from 1 through 11
+  .off#{$i}
+    +grid-push($i)
+    +respond-to($tab-port)
+      +grid-push(0)
+
+@for $i from 1 through 12
+  .grid#{$i} li
+    +grid-column($i)
+
+.shift
+  margin-left: 0
+
+.dropzone-previews.grid2 li
+  +respond-to($base)
+    +grid-column(3)
+  +respond-to($tab-port)
+    +grid-column(4)
+
+.pad
+  padding: 0 1.5em
+  +clearfix
+
+.clear
+  +clearfix
